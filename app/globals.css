@@ -1,26 +1,150 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* colors */
+  --color-surface-container-low: #f5f4ed;
+  --color-surface-dim: #dcdad4;
+  --color-on-tertiary-container: #fdfdfa;
+  --color-inverse-on-surface: #f3f1ea;
+  --color-on-surface-variant: #4e4637;
+  --color-on-secondary-fixed-variant: #454749;
+  --color-secondary: #5d5e61;
+  --color-secondary-container: #e2e2e5;
+  --color-secondary-fixed: #e2e2e5;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed-dim: #ecc062;
+  --color-on-tertiary-fixed-variant: #454746;
+  --color-secondary-fixed-dim: #c6c6c9;
+  --color-on-secondary-container: #636467;
+  --color-tertiary-fixed: #e2e3e1;
+  --color-surface-container-highest: #e4e2dc;
+  --color-inverse-primary: #ecc062;
+  --color-on-secondary-fixed: #1a1c1e;
+  --color-on-primary-fixed-variant: #5c4300;
+  --color-primary-fixed: #ffdfa0;
+  --color-surface-container: #f0eee7;
+  --color-surface: #fbf9f3;
+  --color-background: #fbf9f3;
+  --color-tertiary-fixed-dim: #c6c7c5;
+  --color-on-secondary: #ffffff;
+  --color-on-primary: #ffffff;
+  --color-outline: #807665;
+  --color-inverse-surface: #30312c;
+  --color-error: #ba1a1a;
+  --color-primary-container: #936f16;
+  --color-tertiary: #5b5c5b;
+  --color-on-error: #ffffff;
+  --color-on-primary-container: #fffbff;
+  --color-surface-container-high: #eae8e2;
+  --color-on-background: #1b1c18;
+  --color-surface-tint: #795900;
+  --color-surface-variant: #e4e2dc;
+  --color-primary: #765700;
+  --color-on-surface: #1b1c18;
+  --color-on-tertiary: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-outline-variant: #d1c5b2;
+  --color-surface-bright: #fbf9f3;
+  --color-on-tertiary-fixed: #1a1c1b;
+  --color-tertiary-container: #737573;
+  --color-on-primary-fixed: #261a00;
+  --color-error-container: #ffdad6;
+
+  /* radius */
+  --radius: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  /* spacing */
+  --spacing-base: 8px;
+  --spacing-gutter: 24px;
+  --spacing-stack-sm: 16px;
+  --spacing-stack-md: 32px;
+  --spacing-stack-lg: 64px;
+  --spacing-margin: 32px;
+  --spacing-container-max: 1280px;
+  --spacing-section-padding: 120px;
+
+  /* fonts */
+  --font-display: "Space Grotesk", sans-serif;
+  --font-headline-lg: "Space Grotesk", sans-serif;
+  --font-headline-md: "Space Grotesk", sans-serif;
+  --font-headline-sm: "Space Grotesk", sans-serif;
+  --font-body-lg: "Inter", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-label-bold: "Inter", sans-serif;
+  --font-label-sm: "Inter", sans-serif;
+
+  /* typography */
+  --text-display: 64px;
+  --text-display--line-height: 1.1;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 700;
+
+  --text-headline-lg: 40px;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--font-weight: 600;
+
+  --text-headline-md: 32px;
+  --text-headline-md--line-height: 1.2;
+  --text-headline-md--font-weight: 600;
+
+  --text-headline-sm: 24px;
+  --text-headline-sm--line-height: 1.3;
+  --text-headline-sm--font-weight: 600;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.6;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 1.6;
+  --text-body-md--font-weight: 400;
+
+  --text-label-bold: 14px;
+  --text-label-bold--line-height: 1.4;
+  --text-label-bold--letter-spacing: 0.05em;
+  --text-label-bold--font-weight: 600;
+
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 1.4;
+  --text-label-sm--letter-spacing: 0.02em;
+  --text-label-sm--font-weight: 500;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(160, 123, 35, 0.1);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.technical-edge {
+  border: 1px solid rgba(40, 30, 54, 0.1);
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.plus-corner::before,
+.plus-corner::after {
+  content: "+";
+  position: absolute;
+  font-family: "Space Grotesk";
+  font-size: 10px;
+  color: #a07b23;
+  opacity: 0.5;
+}
+.plus-top-left::before {
+  top: -8px;
+  left: -8px;
+}
+.plus-top-right::after {
+  top: -8px;
+  right: -8px;
+}
+.plus-bottom-left::before {
+  bottom: -8px;
+  left: -8px;
+}
+.plus-bottom-right::after {
+  bottom: -8px;
+  right: -8px;
 }

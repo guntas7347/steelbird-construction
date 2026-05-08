@@ -2,6 +2,14 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+  font-size: 12px;
+}
+
+.lucide {
+  stroke-width: 1.5;
+}
+
 @theme {
   /* colors */
   --color-surface-container-low: #f5f4ed;

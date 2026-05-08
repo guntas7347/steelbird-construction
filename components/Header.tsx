@@ -5,10 +5,9 @@ import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
 
 const navItems = [
+  { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Portfolio", href: "/projects" },
-  { label: "Engineering", href: "/engineering" },
-  { label: "Sustainability", href: "/sustainability" },
   { label: "About", href: "/about" },
 ];
 
@@ -98,6 +97,7 @@ const Header: React.FC = () => {
           >
             <Link
               href="/contact"
+              onClick={() => setIsOpen(false)}
               className="w-full bg-amber-600 text-white py-5 font-bold uppercase tracking-widest text-sm flex justify-center items-center gap-2 active:scale-95 transition-transform"
             >
               Start a Project <ArrowRight size={18} />

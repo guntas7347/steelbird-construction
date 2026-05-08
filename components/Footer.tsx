@@ -1,3 +1,6 @@
+import { Mail } from "lucide-react";
+import Link from "next/link";
+
 const Footer = () => {
   return (
     <footer className="w-full py-16 bg-zinc-900 dark:bg-black border-t border-zinc-800">
@@ -78,28 +81,22 @@ const Footer = () => {
         </div>
         {/* Contact */}
         <div className="space-y-6">
-          <h4 className="text-amber-500 font-label-bold uppercase tracking-wider">
-            Headquarters
-          </h4>
-          <p className="text-zinc-400 font-['Space_Grotesk'] text-sm tracking-normal">
-            1200 Industrial Way
-            <br />
-            Suite 400
-            <br />
-            Chicago, IL 60601
-          </p>
-          <div className="flex gap-4">
-            <span className="material-symbols-outlined text-zinc-400">
-              mail
+          <Link
+            href="mailto:info@steelbirdconstruction.com"
+            className="flex gap-4"
+          >
+            <Mail className="text-zinc-400" size={20} />
+            <span className="text-zinc-400 text-sm">
+              info@steelbirdconstruction.com
             </span>
-            <span className="text-zinc-400 text-sm">contact@steelbird.com</span>
-          </div>
+          </Link>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-zinc-800">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-zinc-400 font-['Space_Grotesk'] text-sm tracking-normal">
-            © 2024 Steel Bird Construction. Engineered Trust.
+            © {new Date().getFullYear()} Steel Bird Construction. Engineered
+            Trust.
           </p>
           <div className="flex gap-6">
             <span className="material-symbols-outlined text-zinc-600 hover:text-amber-500 cursor-pointer transition-colors">

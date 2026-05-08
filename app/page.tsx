@@ -17,6 +17,8 @@ import {
   Timer,
   Warehouse,
   Construction,
+  Factory,
+  House,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -24,28 +26,34 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "Concrete Driveways",
-    desc: "Reinforced, high-PSI pours designed to handle heavy vehicle loads without cracking.",
+    title: "Driveways",
+    desc: "Reinforced, high-PSI concrete driveways engineered for durability and heavy vehicle traffic.",
     icon: Construction,
     features: ["Stamped & Decorative", "Exposed Aggregate"],
   },
   {
-    title: "Sidewalks & Paths",
-    desc: "ADA-compliant walkways and aesthetic garden paths with precision edge finishing.",
-    icon: MapPin,
-    features: ["Smooth Broom Finish", "Permeable Options"],
-  },
-  {
     title: "Basement Slabs",
-    desc: "Moisture-sealed, level structural slabs that provide the ultimate foundation.",
+    desc: "Level, moisture-protected structural slabs built for long-term strength and stability.",
     icon: Layers,
     features: ["Vapor Barrier Install", "Fiber Reinforced"],
   },
   {
     title: "Garage Floors",
-    desc: "Oil-resistant, heavy-duty flooring with optional professional epoxy coatings.",
+    desc: "Heavy-duty concrete garage floors with smooth finishing and optional coating preparation.",
     icon: Warehouse,
     features: ["Epoxy Ready", "Chemical Resistant"],
+  },
+  {
+    title: "Machine Shops",
+    desc: "Industrial-grade concrete flooring designed to support heavy machinery and constant use.",
+    icon: Factory,
+    features: ["High Load Capacity", "Precision Level Finish"],
+  },
+  {
+    title: "House Foundations",
+    desc: "Strong and accurately poured concrete foundations ensuring structural reliability.",
+    icon: House,
+    features: ["Footings & Pads", "Rebar Reinforcement"],
   },
 ];
 
@@ -77,9 +85,9 @@ const workProcess = [
 ];
 
 const stats = [
-  { label: "Projects Completed", value: "2,500+" },
-  { label: "Cubic Yards Poured", value: "85k" },
-  { label: "Years in Business", value: "42" },
+  { label: "Projects Completed", value: "700+" },
+  { label: "Cubic Yards Poured", value: "25k" },
+  { label: "Years in Business", value: "10+" },
   { label: "Customer Rating", value: "4.9/5" },
 ];
 
@@ -107,15 +115,16 @@ export default function Home() {
             </div>
 
             <h1 className="text-5xl md:text-8xl font-black text-white tracking-tighter leading-[0.9]">
-              SOLID <br />
+              Concrete & <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-200">
                 FOUNDATIONS
               </span>
             </h1>
 
             <p className="text-xl text-zinc-300 max-w-xl font-light leading-relaxed">
-              Serving residential and commercial clients with
-              precision-engineered concrete for over four decades.
+              We provide quality concrete services for residential and
+              commercial projects, including foundations, driveways, sidewalks,
+              garage slabs, shops, mechanic shops, and more.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-6">

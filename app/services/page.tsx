@@ -158,7 +158,7 @@ export default function ServicesPage() {
       {/* --- Detailed Services Section --- */}
       <section className="py-24 max-w-7xl mx-auto px-8">
         <div className="space-y-32">
-          {mainServices.map((service, index) => (
+          {mainServices.map((service: any, index) => (
             <div
               key={service.id}
               className={`flex flex-col lg:flex-row gap-16 items-center ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
@@ -190,7 +190,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {service.details.map((detail, i) => (
+                  {service.details.map((detail: any, i: number) => (
                     <div key={i} className="flex items-center gap-3 group">
                       <div className="w-6 h-6 rounded-full bg-amber-600/10 flex items-center justify-center group-hover:bg-amber-600 transition-colors">
                         <Check

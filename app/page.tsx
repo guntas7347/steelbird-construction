@@ -137,6 +137,16 @@ export default function Home() {
                   className="group-hover:translate-x-2 transition-transform"
                   size={20}
                 />
+              </Link>{" "}
+              <Link
+                href="/projects"
+                className="group bg-amber-600 hover:bg-amber-500 text-white px-10 py-5 font-bold uppercase tracking-widest transition-all flex items-center gap-3"
+              >
+                Our Works
+                <MoveRight
+                  className="group-hover:translate-x-2 transition-transform"
+                  size={20}
+                />
               </Link>
             </div>
           </div>

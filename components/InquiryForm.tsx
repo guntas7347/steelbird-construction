@@ -13,26 +13,26 @@ const InquiryForm = () => {
     projectDetails: "",
   });
 
-  const email = "[EMAIL_ADDRESS]";
+  const email = "info@steelbirdconstruction.com";
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const subject = encodeURIComponent(`New ${form.projectType} Inquiry`);
+    const subject = `${form.projectType || "New"} Inquiry`;
 
-    const body = encodeURIComponent(
-      [
-        `Name: ${form.name}`,
-        `Email: ${form.email}`,
-        `Phone: ${form.phone}`,
-        `Project Type: ${form.projectType}`,
-        "",
-        "Project Details:",
-        form.projectDetails,
-      ].join("\n"),
-    );
+    const body = `
+Name: ${form.name}
+Email: ${form.email}
+Phone: ${form.phone}
+Project Type: ${form.projectType}
 
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+Project Details:
+${form.projectDetails}
+`;
+
+    const link = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.open(link, "_self");
   };
   return (
     <div className="lg:col-span-8">
@@ -75,6 +75,7 @@ const InquiryForm = () => {
                 type="text"
                 placeholder="John Doe"
                 name="name"
+                required
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 className="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-4 focus:border-amber-600 outline-none transition-all text-sm"
@@ -104,6 +105,7 @@ const InquiryForm = () => {
                 type="tel"
                 placeholder="(555) 000-0000"
                 name="phone"
+                required
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 className="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-4 focus:border-amber-600 outline-none transition-all text-sm"
@@ -126,6 +128,7 @@ const InquiryForm = () => {
                 <option>Replacement Slab</option>
                 <option>Commercial Foundation</option>
                 <option>Decorative / Stamped</option>
+                <option>Other</option>
               </select>
             </div>
           </div>
@@ -139,6 +142,7 @@ const InquiryForm = () => {
               placeholder="Describe the current condition and desired outcome..."
               className="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-4 focus:border-amber-600 outline-none transition-all text-sm resize-none"
               name="projectDetails"
+              required
               value={form.projectDetails}
               onChange={(e) =>
                 setForm({ ...form, projectDetails: e.target.value })

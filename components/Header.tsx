@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Phone } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -52,6 +52,12 @@ const Header: React.FC = () => {
         {/* Action Button & Mobile Toggle */}
         <div className="flex items-center gap-4">
           <Link
+            href="tel:+13062137602"
+            className="flex md:hidden rounded-lg size-14 border justify-center items-center bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 text-xs font-bold uppercase tracking-widest hover:bg-amber-600 dark:hover:bg-amber-500 transition-all duration-200 active:scale-95"
+          >
+            <Phone />
+          </Link>
+          <Link
             href="/contact"
             className="hidden sm:flex items-center gap-2 bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 px-5 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-amber-600 dark:hover:bg-amber-500 transition-all duration-200 active:scale-95"
           >
@@ -93,7 +99,7 @@ const Header: React.FC = () => {
           ))}
 
           <div
-            className={`mt-auto pb-12 transition-all duration-500 delay-300 ${isOpen ? "opacity-100" : "opacity-0"}`}
+            className={`mt-80 pb-12 transition-all duration-500 delay-300 ${isOpen ? "opacity-100" : "opacity-0"}`}
           >
             <Link
               href="/contact"

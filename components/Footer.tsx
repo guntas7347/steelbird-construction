@@ -11,8 +11,8 @@ const Footer = () => {
             Steel Bird
           </div>
           <p className="text-zinc-400 font-['Space_Grotesk'] text-sm tracking-normal">
-            Engineering a legacy of trust through architectural precision and
-            structural innovation since 1984.
+            Delivering quality concrete solutions with over a decade of industry
+            experience.
           </p>
         </div>
         {/* Quick Links */}

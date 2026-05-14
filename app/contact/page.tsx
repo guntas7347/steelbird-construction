@@ -113,8 +113,8 @@ export default function ContactPage() {
       {/* --- Secondary CTA / Visit Office --- */}
       <section className="py-24 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-200 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-800">
-            <div className="bg-white dark:bg-zinc-950 p-12 space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-px bg-zinc-200 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-800">
+            {/* <div className="bg-white dark:bg-zinc-950 p-12 space-y-6">
               <div className="p-3 bg-zinc-100 dark:bg-zinc-900 w-fit">
                 <Hammer className="text-amber-600" />
               </div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
               <div className="flex items-center gap-2 text-amber-600 font-bold text-[10px] uppercase tracking-widest">
                 Get Directions <Send size={14} />
               </div>
-            </div>
+            </div> */}
 
             <div className="bg-white dark:bg-zinc-950 p-12 space-y-6">
               <div className="p-3 bg-zinc-100 dark:bg-zinc-900 w-fit">

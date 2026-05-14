@@ -16,25 +16,27 @@ import {
   Warehouse,
   Layers,
 } from "lucide-react";
+import Link from "next/link";
 
 // --- Data Structures ---
 
 const mainServices = [
   {
     id: "driveways",
-    title: "Premium Driveways",
+    title: "Concrete Driveways",
     icon: Construction,
     image:
       "https://images.unsplash.com/photo-1590079015191-f569a6a26c8e?auto=format&fit=crop&q=80",
     description:
-      "Our signature high-PSI driveways are engineered for heavy vehicle loads and extreme weather resilience.",
+      "We build high-quality concrete driveways with strong reinforcement and professional finishing.",
     details: [
-      "Reinforced with Grade 60 Rebar",
-      "Custom Expansion Joint Mapping",
-      "UV-Resistant Sealant Included",
-      "Available in Stamped or Broom Finish",
+      "Rebar reinforcement",
+      "Expansion joints",
+      "Broom and spin finish",
+      "Expose aggregate",
+      "Stamp concrete",
     ],
-    priceRange: "Starting at $12 / sq ft",
+    // priceRange: "Starting at $12 / sq ft",
   },
   {
     id: "basements",
@@ -48,9 +50,9 @@ const mainServices = [
       "Leveling within 1/8 inch tolerance",
       "10-mil Stego Wrap Vapor Barrier",
       "High-Early Strength Mix Designs",
-      "Fiber-mesh reinforcement",
+      // "Fiber-mesh reinforcement",
     ],
-    priceRange: "Starting at $10 / sq ft",
+    // priceRange: "Starting at $10 / sq ft",
   },
   {
     id: "garage",
@@ -62,52 +64,52 @@ const mainServices = [
       "Heavy-duty industrial finishes designed to resist oil spills, chemical corrosion, and tire marking.",
     details: [
       "Power-Troweled Smooth Finish",
-      "Chemical Resistant Additives",
-      "Epoxy-Ready Surface Prep",
-      "Abrasion-Resistant Aggregates",
+      // "Chemical Resistant Additives",
+      // "Epoxy-Ready Surface Prep",
+      // "Abrasion-Resistant Aggregates",
     ],
-    priceRange: "Starting at $14 / sq ft",
+    // priceRange: "Starting at $14 / sq ft",
   },
   {
     id: "sidewalks",
-    title: "Walkways & Steps",
+    title: "Steps",
     icon: MapPin,
     image:
       "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?auto=format&fit=crop&q=80",
     description:
-      "Enhance your curb appeal with ADA-compliant walkways and custom-formed concrete steps.",
+      "Custom concrete steps including floating steps and finished nosing options.",
     details: [
-      "Non-Slip Texture Application",
-      "Decorative Border Options",
-      "Precision Pitch for Water Runoff",
-      "Hand-finished Edging",
+      "Floating steps",
+      "Nosing steps",
+      "Broom finish",
+      "Decorative boarder option",
     ],
-    priceRange: "Starting at $9 / sq ft",
+    // priceRange: "Starting at $9 / sq ft",
   },
 ];
 
-const technicalSpecs = [
-  {
-    feature: "Compressive Strength",
-    residential: "3,500 PSI",
-    industrial: "5,000+ PSI",
-  },
-  {
-    feature: "Reinforcement",
-    residential: "Fiber Mesh / #3 Rebar",
-    industrial: "Grade 60 #4 Rebar",
-  },
-  {
-    feature: "Curing Time (Foot Traffic)",
-    residential: "24 Hours",
-    industrial: "48 Hours",
-  },
-  {
-    feature: "Curing Time (Vehicle)",
-    residential: "7 Days",
-    industrial: "14-28 Days",
-  },
-];
+// const technicalSpecs = [
+//   {
+//     feature: "Compressive Strength",
+//     residential: "3,500 PSI",
+//     industrial: "5,000+ PSI",
+//   },
+//   {
+//     feature: "Reinforcement",
+//     residential: "Fiber Mesh / #3 Rebar",
+//     industrial: "Grade 60 #4 Rebar",
+//   },
+//   {
+//     feature: "Curing Time (Foot Traffic)",
+//     residential: "24 Hours",
+//     industrial: "48 Hours",
+//   },
+//   {
+//     feature: "Curing Time (Vehicle)",
+//     residential: "7 Days",
+//     industrial: "14-28 Days",
+//   },
+// ];
 
 export default function ServicesPage() {
   return (
@@ -205,11 +207,14 @@ export default function ServicesPage() {
 
                 <div className="pt-6 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between">
                   <span className="text-amber-600 font-bold uppercase tracking-widest text-sm">
-                    {service.priceRange}
+                    {service?.priceRange || "Quote on Request"}
                   </span>
-                  <button className="flex items-center gap-2 font-bold text-zinc-900 dark:text-white hover:text-amber-600 transition-colors">
-                    View Project Specs <ArrowRight size={18} />
-                  </button>
+                  <Link
+                    href="/contact"
+                    className="flex items-center gap-2 font-bold text-zinc-900 dark:text-white hover:text-amber-600 transition-colors"
+                  >
+                    Contact Us <ArrowRight size={18} />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -218,7 +223,7 @@ export default function ServicesPage() {
       </section>
 
       {/* --- Technical Comparison Table --- */}
-      <section className="py-24 bg-zinc-900 text-white">
+      {/* <section className="py-24 bg-zinc-900 text-white">
         <div className="max-w-5xl mx-auto px-8">
           <div className="text-center mb-16 space-y-4">
             <h3 className="text-3xl font-black tracking-tighter">
@@ -263,7 +268,7 @@ export default function ServicesPage() {
             </table>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* --- Why Our Concrete Section --- */}
       <section className="py-24 max-w-7xl mx-auto px-8">
@@ -282,7 +287,7 @@ export default function ServicesPage() {
             {
               icon: ShieldCheck,
               title: "Warranty Guaranteed",
-              text: "Every structural pour comes with a 5-year anti-settlement warranty.",
+              text: "All work is completed with quality workmanship and attention to detail, backed by a limited warranty in accordance with industry standards.",
             },
           ].map((item, i) => (
             <div key={i} className="space-y-4 group">

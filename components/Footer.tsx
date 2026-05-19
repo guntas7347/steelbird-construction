@@ -7,9 +7,12 @@ const Footer = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto">
         {/* Brand Column */}
         <div className="space-y-6">
-          <div className="text-xl font-bold text-white uppercase tracking-widest">
-            Steel Bird
-          </div>
+          <img
+            src="/logo-rectangle.jpg"
+            alt="Steel Bird Construction Logo"
+            className="h-14 w-auto"
+          />
+
           <p className="text-zinc-400 font-['Space_Grotesk'] text-sm tracking-normal">
             Delivering quality concrete solutions with over a decade of industry
             experience.

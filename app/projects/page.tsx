@@ -12,37 +12,37 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
+import {
+  belowGradeEnterance,
+  otherProjects,
+  plainConcreteProjects,
+} from "@/lib/data";
 
-// --- Project Data (Now supports flexible objects) ---
+const categories = ["All", "Plain Concrete", "Below Grade Entrance", "Other"];
 
-const categories = ["All", "Commercial", "Foundation", "Slab-On Grade"];
-
-const projects = [
-  { image: "https://i.ibb.co/zTqvnrf5/stell-birl-work-1.jpg" },
-  { image: "https://i.ibb.co/dyMZ1sQ/stell-birl-work-2.jpg" },
-  { image: "https://i.ibb.co/xtxRMrNS/stell-birl-work-3.jpg" },
-  { image: "https://i.ibb.co/JFS3t6bS/stell-birl-work-4.jpg" },
-  { image: "https://i.ibb.co/d0BX1W0z/stell-birl-work-5.jpg" },
-  { image: "https://i.ibb.co/G3Wbk2b6/stell-birl-work-6.jpg" },
-  { image: "https://i.ibb.co/C3SMSbrN/stell-birl-work-7.jpg" },
-  { image: "https://i.ibb.co/jv91yn2d/stell-birl-work-8.jpg" },
-  { image: "https://i.ibb.co/mCZ4zmm9/stell-birl-work-9.jpg" },
-  { image: "https://i.ibb.co/fVNFZzJc/stell-birl-work-10.jpg" },
-  { image: "https://i.ibb.co/Xk5DJXRS/stell-birl-work-11.jpg" },
-  { image: "https://i.ibb.co/tTgYFmDw/stell-birl-work-12.jpg" },
-  { image: "https://i.ibb.co/3mCR9HDT/stell-birl-work-13.jpg" },
-  { image: "https://i.ibb.co/YTbWfwJ4/stell-birl-work-14.jpg" },
-  { image: "https://i.ibb.co/S4MyQVPb/stell-birl-work-15.jpg" },
-];
+const projectImages: Record<string, string[]> = {
+  "Plain Concrete": plainConcreteProjects,
+  "Below Grade Entrance": belowGradeEnterance,
+  Other: otherProjects,
+};
 
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState("All");
 
   const filteredProjects =
     activeFilter === "All"
-      ? projects
-      : projects.filter((p: any) => p.category === activeFilter);
-
+      ? Object.entries(projectImages).flatMap(([category, images]) =>
+          images.map((image, index) => ({
+            id: `${category}-${index}`,
+            category,
+            image,
+          })),
+        )
+      : (projectImages[activeFilter] || []).map((image, index) => ({
+          id: `${activeFilter}-${index}`,
+          category: activeFilter,
+          image,
+        }));
   return (
     <div className="bg-white dark:bg-zinc-950 min-h-screen pt-20">
       {/* --- Page Header --- */}
@@ -62,7 +62,7 @@ export default function PortfolioPage() {
               </p>
             </div>
 
-            {/* <div className="flex flex-wrap gap-2 pb-2">
+            <div className="flex flex-wrap gap-2 pb-2">
               {categories.map((cat) => (
                 <button
                   key={cat}
@@ -76,7 +76,7 @@ export default function PortfolioPage() {
                   {cat}
                 </button>
               ))}
-            </div> */}
+            </div>
           </div>
         </div>
       </section>

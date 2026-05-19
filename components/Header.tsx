@@ -32,7 +32,11 @@ const Header: React.FC = () => {
           href="/"
           className="text-2xl font-black text-zinc-900 dark:text-zinc-50 tracking-tighter"
         >
-          STEEL BIRD
+          <img
+            src="/logo-rectangle-removebg.png"
+            alt="Steel Bird Construction Logo"
+            className="h-14 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}

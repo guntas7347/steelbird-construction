@@ -59,3 +59,41 @@ export const plainConcreteProjects = [
   "https://i.ibb.co/VYb5vdjP/steel-plain-concrete-2.jpg",
   "https://i.ibb.co/ZpQhMstF/steel-plain-concrete-1.jpg",
 ];
+
+export const stampConcrete: string[] = [
+  "https://i.ibb.co/0jZspcGg/PHOTO-2026-05-18-14-49-48.jpg",
+  "https://i.ibb.co/L2M5rJy/PHOTO-2026-05-18-14-49-47.jpg",
+  "https://i.ibb.co/zVtKH6bd/PHOTO-2026-05-18-14-49-47-2.jpg",
+  "https://i.ibb.co/4ZKKNV2C/PHOTO-2026-05-18-14-49-47-1.jpg",
+];
+
+export const exposeAggregateConcrete: string[] = [
+  "https://i.ibb.co/FPfX7rx/PHOTO-2026-05-18-14-44-03.jpg",
+  "https://i.ibb.co/RG2YsLf0/PHOTO-2026-05-18-14-44-03-5.jpg",
+  "https://i.ibb.co/gMB81Cxm/PHOTO-2026-05-18-14-44-03-4.jpg",
+  "https://i.ibb.co/DPjs4JDB/PHOTO-2026-05-18-14-44-03-3.jpg",
+  "https://i.ibb.co/gNT4FTB/PHOTO-2026-05-18-14-44-03-2.jpg",
+  "https://i.ibb.co/nx3xBnv/PHOTO-2026-05-18-14-44-03-1.jpg",
+  "https://i.ibb.co/ymThFwvK/steel-plain-concrete-21.jpg",
+  "https://i.ibb.co/wZxb3qv1/PHOTO-2026-05-18-14-44-02-4.jpg",
+  "https://i.ibb.co/JR9r9RgS/PHOTO-2026-05-18-14-44-02-3.jpg",
+  "https://i.ibb.co/XrLcn9cz/PHOTO-2026-05-18-14-44-02-2.jpg",
+  "https://i.ibb.co/zhyYwZkk/PHOTO-2026-05-18-14-44-02-1.jpg",
+];
+
+export const concreteWorkForCityOfSaskatoon: string[] = [
+  "https://i.ibb.co/21nFv8Xf/PHOTO-2026-05-18-14-46-29.jpg",
+  "https://i.ibb.co/93h7rVNk/PHOTO-2026-05-18-14-46-29-4.jpg",
+  "https://i.ibb.co/ZR3yFvmw/PHOTO-2026-05-18-14-46-29-3.jpg",
+  "https://i.ibb.co/JFgxvqLj/PHOTO-2026-05-18-14-46-29-2.jpg",
+  "https://i.ibb.co/JFGrXHbw/PHOTO-2026-05-18-14-46-29-1.jpg",
+  "https://i.ibb.co/LDhKDjx1/PHOTO-2026-05-18-14-46-28-8.jpg",
+  "https://i.ibb.co/Gf7xzPmB/PHOTO-2026-05-18-14-46-28-7.jpg",
+  "https://i.ibb.co/5gPF6P85/PHOTO-2026-05-18-14-46-28-6.jpg",
+  "https://i.ibb.co/RGH24Dpv/PHOTO-2026-05-18-14-46-28-5.jpg",
+  "https://i.ibb.co/LDhKDjx1/PHOTO-2026-05-18-14-46-28-8.jpg",
+  "https://i.ibb.co/d0JXhhCW/PHOTO-2026-05-18-14-46-28-4.jpg",
+  "https://i.ibb.co/6RPNCznM/PHOTO-2026-05-18-14-46-28-3.jpg",
+  "https://i.ibb.co/N2YmhZVh/PHOTO-2026-05-18-14-46-28-2.jpg",
+  "https://i.ibb.co/7JL4Dbjh/PHOTO-2026-05-18-14-46-28-1.jpg",
+];

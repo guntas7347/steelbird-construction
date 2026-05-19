@@ -16,14 +16,28 @@ import {
   belowGradeEnterance,
   otherProjects,
   plainConcreteProjects,
+  stampConcrete,
+  exposeAggregateConcrete,
+  concreteWorkForCityOfSaskatoon,
 } from "@/lib/data";
 
-const categories = ["All", "Plain Concrete", "Below Grade Entrance", "Other"];
+const categories = [
+  "All",
+  "Plain Concrete",
+  "Below Grade Entrance",
+  "Stamp Concrete",
+  "Expose Aggregate Concrete",
+  "Concrete work for city of Saskatoon",
+  "Other",
+];
 
 const projectImages: Record<string, string[]> = {
   "Plain Concrete": plainConcreteProjects,
   "Below Grade Entrance": belowGradeEnterance,
   Other: otherProjects,
+  "Stamp Concrete": stampConcrete,
+  "Expose Aggregate Concrete": exposeAggregateConcrete,
+  "Concrete work for city of Saskatoon": concreteWorkForCityOfSaskatoon,
 };
 
 export default function PortfolioPage() {

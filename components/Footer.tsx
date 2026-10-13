@@ -113,6 +113,18 @@ const Footer = () => {
             </span>
           </div>
         </div>
+        <div className="mt-10 pt-8 pb-10 lg:pt-12 lg:pb-12 text-center">
+          <p className="text-[10px] text-white/30 leading-relaxed">
+            Website Design & Development by{" "}
+            <Link
+              target="_blank"
+              href="https://guntassandhu.com"
+              className="text-white/60 hover:text-primary transition-colors"
+            >
+              Guntas Sandhu
+            </Link>
+          </p>
+        </div>
       </div>
     </footer>
   );
